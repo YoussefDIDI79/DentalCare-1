@@ -92,9 +92,9 @@ Preferred communication style: Simple, everyday language.
 ## Deployment Configuration
 
 The website is now configured for deployment on Vercel with:
-- `vercel.json` configuration file for serverless build and routing
+- `vercel.json` configuration file for static site deployment
 - `.vercelignore` to exclude unnecessary files
-- `api/index.ts` unified serverless entry point
+- `api/appointments.ts` and `api/contact.ts` as separate serverless functions
 - `VERCEL_DEPLOYMENT.md` with step-by-step deployment instructions
 - Automatic build process using npm run build command
-- Fixed configuration conflicts for successful deployment
+- Simplified serverless functions to resolve deployment errors
