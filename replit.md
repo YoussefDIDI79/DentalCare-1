@@ -83,7 +83,16 @@ The application is configured for deployment on Replit with the following setup:
 
 ## Changelog
 - June 26, 2025. Initial setup
+- June 26, 2025. Added Vercel deployment configuration
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+
+## Deployment Configuration
+
+The website is now configured for deployment on Vercel with:
+- `vercel.json` configuration file for build and routing
+- `.vercelignore` to exclude unnecessary files
+- `VERCEL_DEPLOYMENT.md` with step-by-step deployment instructions
+- Automatic build process using npm run build command
