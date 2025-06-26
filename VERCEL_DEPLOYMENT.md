@@ -1,41 +1,39 @@
 # Guide de Déploiement Vercel
 
-## Configuration automatique
+## Configuration optimisée
 
-Les fichiers suivants ont été créés pour faciliter le déploiement sur Vercel :
+Les fichiers suivants ont été créés pour le déploiement Vercel :
 
-- `vercel.json` : Configuration de déploiement
-- `.vercelignore` : Fichiers à ignorer lors du déploiement
+- `vercel.json` : Configuration serverless optimisée
+- `.vercelignore` : Exclusion des fichiers inutiles
+- `api/index.ts` : Point d'entrée serverless unifié
+
+## Architecture serverless
+
+**Structure mise à jour pour Vercel :**
+- Toutes les routes gérées par `api/index.ts`
+- API et frontend servis par la même fonction
+- Configuration serverless native
 
 ## Étapes de déploiement
 
-1. **Créer un compte Vercel** sur [vercel.com](https://vercel.com)
+1. **Compte Vercel** sur [vercel.com](https://vercel.com)
+2. **Import GitHub** - Connectez votre repository
+3. **Build automatique** - Configuration détectée automatiquement
+4. **Déploiement** - Site accessible immédiatement
 
-2. **Connecter votre repository GitHub**
-   - Connectez votre compte GitHub à Vercel
-   - Importez votre projet depuis GitHub
+## Résolution des erreurs communes
 
-3. **Configuration automatique**
-   - Vercel détectera automatiquement la configuration
-   - Le build et le déploiement se feront automatiquement
+**Si erreur 404 :**
+- Vérifiez que `npm run build` fonctionne localement
+- Assurez-vous que `dist/` contient `index.html`
 
-4. **Variables d'environnement (si nécessaire)**
-   - Dans les paramètres du projet Vercel
-   - Ajoutez les variables d'environnement requises
+**Si erreur de fonction :**
+- Les API routes sont dans `/api/*`
+- Timeout configuré à 30 secondes
 
-## Structure du déploiement
+## Post-déploiement
 
-- **Frontend** : Compilé avec Vite et servi statiquement
-- **Backend** : API routes servies via Vercel Functions
-- **Base de données** : En mémoire (pour production, considérez PostgreSQL)
-
-## URLs après déploiement
-
-- Site principal : `https://votre-projet.vercel.app`
-- API endpoints : `https://votre-projet.vercel.app/api/*`
-
-## Notes importantes
-
-- Le déploiement est automatique à chaque push sur la branche principale
-- Les logs sont disponibles dans le dashboard Vercel
-- Pour une base de données persistante, configurez PostgreSQL avec Vercel
+- URL principale : `https://votre-projet.vercel.app`
+- Monitoring dans dashboard Vercel
+- Logs de fonction disponibles
